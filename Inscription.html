@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Inscrip.css">
+    <title>Inscription</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="post" th:action="@{/saveUser}" th:object="${User}" >
+            
+            <h1>Inscription</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Nom utilisateur" th:field="*{username}" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Password" th:field="*{password}" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="text" placeholder="Genre" th:field="*{genre}" required>
+                <i class='bx bx-male-female'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="text" placeholder="Adresse mail" th:field="*{email}" required>
+                <i class='bx bxl-gmail'></i>
+            </div>
+
+            <button type="submit" class="btn">Enregistrer</button>
+
+            <div class="register-link">
+                <p>Cliquer sur connexion pour vous connecter <br><a href="Login.html">Connexion</a></p>  
+            </div>
+
+        </form>
+
+    </div>    
+</body>
+</html>
